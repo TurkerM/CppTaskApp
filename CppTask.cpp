@@ -1,4 +1,7 @@
 ﻿#include <iostream>
+#include <thread>
+#include <chrono> 
+#include <cstdlib>
 
 class IBaseClass {
 public:
@@ -27,5 +30,8 @@ class Child2 : public IBaseClass {
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    for (int i = 0; i <= 10; i++) {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::cout << i << std::endl;
+    }
 }
