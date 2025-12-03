@@ -30,8 +30,17 @@ class Child2 : public IBaseClass {
 
 int main()
 {
-    for (int i = 0; i <= 10; i++) {
+    for (int i = 1; i <= 10; i++) {
+        int numA = rand() % 10 + 1;
+        int numB = rand() % 10 + 1;
+        for (int j = 1; j <= numA; j++) {
+            std::cout << "loop_a =" << j << std::endl;
+        }
+        
+        for (int j = 1; j <= numB; j++) {
+            std::cout << "loop_b =" << j << std::endl;
+        }
+
         std::this_thread::sleep_for(std::chrono::seconds(1));
-        std::cout << i << std::endl;
     }
 }
